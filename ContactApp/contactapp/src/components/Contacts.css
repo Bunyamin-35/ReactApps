@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@0;1&display=swap');
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+.container {
+    background: #2c3e50;
+    padding: 2rem;
+    margin-bottom: 10px ;
+    width: 600px;
+    color: white;
+    border-radius: 10px;
+}
+#title {
+    background: #2c3e50;
+    padding: 1rem;
+    margin-bottom: 10px ;
+    color: white;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #2c3e50;
+    padding: 1rem;
+    margin-bottom: 10px ;
+    color: white;
+    border-radius: 10px;
+    font-size: .75rem;
+}
+
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .40rem 0;
+    border:none;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.list-group {
+    margin: 5px 0;
+}
+
+.list-group li {
+    background: #95a5a6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.list-group li .userInfo {
+    display: flex;
+}
+
+.list-group li .userInfo .img {
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.list-group li .userInfo .info {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group li .userInfo .info #phoneNumber {
+    font-size: .75rem;
+    margin-left: 3px;
+}
+/* Submit button starts */
+#btn-submit {
+    width: 100%;
+    margin-top: 5px;
+    padding: 6px 24px;
+    background: white;
+    border: 1px solid green;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#btn-submit:hover{
+    background-color:green;
+    color: white;
+    
+}
+/* Submit button ends */
+
+/* Delete button starts */
+.btn-close {
+    padding: 6px 24px;
+    background: white;
+    border: 1px solid red;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-close:hover{
+    background-color:red;
+    color: white;
+    
+}
+/* Delete button ends */
