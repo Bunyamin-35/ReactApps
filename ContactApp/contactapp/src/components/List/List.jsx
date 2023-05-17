@@ -1,5 +1,18 @@
 import { useState } from "react";
 const List = ({ info, setInfo }) => {
+
+    const [filterValue, setFilterValue] = useState("");
+
+    const handleFilterChange = (e) => {
+        setFilterValue(e.target.value.toLowerCase());
+    }
+
+    const filteredList = info.filter((item) => {
+        return Object.keys(item).some((key) => {
+            return item[key].toString().toLowerCase().includes(filterValue)
+        })
+    });
+    
     function deleteUser(id) {
         console.log(id);
         const newList = info.filter((item) => item.id !== id);
@@ -11,11 +24,11 @@ const List = ({ info, setInfo }) => {
         <>
             <div className="mb-3">
                 <label htmlFor="exampleInputEmail1" className="form-label">Search</label>
-                <input type="email" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" />
+                <input value={filterValue} onChange={handleFilterChange} placeholder="Search" />
             </div>
             <div>
                 <ul className="list-group">
-                    {info.map((item, i) =>
+                    {filteredList.map((item, i) =>
                         <li key={i} className="list-group-item">
                             <div className="userInfo">
                                 <div className="img">
