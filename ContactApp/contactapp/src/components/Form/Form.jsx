@@ -9,6 +9,8 @@ const Form = ({ info, setInfo }) => {
         e.preventDefault();
         console.log(form);
         setInfo([...info, form])
+        setForm({ fullName: "", phoneNumber: "" })
+        
     }
 
 
@@ -22,6 +24,8 @@ const Form = ({ info, setInfo }) => {
                         className="form-control"
                         id="exampleInputfullname"
                         onChange={handleChange}
+                        value={form.fullName}
+                        
                     />
                 </div>
                 <div className="mb-3">
@@ -31,6 +35,7 @@ const Form = ({ info, setInfo }) => {
                         className="form-control"
                         id="exampleInputphonenumber"
                         onChange={handleChange}
+                        value={form.phoneNumber}
                     />
                 </div>
                 <button

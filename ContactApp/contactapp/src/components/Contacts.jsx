@@ -7,22 +7,24 @@ import "./Contacts.css"
 import {useState} from "react";
 
 const Contacts = () => {
-    
     const[contacts,setContacts] = useState([
         {
             id:"1",
             fullName:"Ahmet",
-            phoneNumber:"555555"
+            phoneNumber:"555555",
+            isEditing:false,
         },
         {
             id:"2",
             fullName:"Mehmet",
-            phoneNumber:"666666"
+            phoneNumber:"666666",
+            isEditing:false,
         },
         {
             id:"3",
             fullName:"Ali",
-            phoneNumber:"777777"
+            phoneNumber:"777777",
+            isEditing:false,
         },
     ])
     
