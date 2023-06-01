@@ -1,0 +1,342 @@
+/* TODO FORM */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital@0;1&display=swap');
+
+* {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.todo_form {
+    width: 50%;
+    margin: 0 0 1rem;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 30px 9px rgba(199, 194, 193, 1);
+}
+
+.todo_form h2 {
+    color: #00d061;
+    font-size: 2rem;
+    margin: 0 0 1rem;
+}
+
+.todo_form .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo_form .form label {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #2980b9;
+}
+
+.todo_form input {
+    width: 100%;
+    height: 1.8rem;
+    margin: .5rem 0;
+    padding: .4rem .4rem;
+    background: #d3d9e3;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+}
+
+.todo_form input::placeholder {
+    color: #00d061;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+
+.addbtn {
+    width: 100%;
+    height: 1.8rem;
+    background: #d3d9e3;
+    /* background: linear-gradient(to top, #00154c, #12376e, #23487f); */
+    color: #00d061;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); */
+    overflow: hidden;
+}
+
+.addbtn span {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: top 0.5s;
+}
+
+.btn-text-one {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.btn-text-two {
+    position: absolute;
+    width: 100%;
+    top: 150%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.addbtn:hover {
+    background: #00d061;
+    color: #fff;
+
+}
+
+.addbtn:hover .btn-text-one {
+    top: -100%;
+}
+
+.addbtn:hover .btn-text-two {
+    top: 50%;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Yarı saydam arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    width: 50%;
+    height: auto;
+    background-color: white;
+    border-radius: 1rem;
+    /* box-shadow: .1rem .1rem 1rem #1abc9c; */
+}
+
+.title-card {
+    border-bottom: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.title-card button {
+    width: 20%;
+    padding: .25rem .25rem;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    cursor: pointer;
+
+}
+
+.title-card h2 {
+    color: rgb(165, 165, 16);
+    letter-spacing: .25rem;
+    text-transform: uppercase;
+}
+
+.title-card .close-button {
+    color: #2980b9;
+    transition: all 0.3s;
+}
+
+.title-card .close-button:hover {
+    text-decoration: underline;
+    color: #f35369;
+
+}
+
+.close-button {
+    /* position: absolute;
+    top: 10px;
+    right: 10px; */
+}
+.desc-card {
+    text-align: center;
+    padding: 1rem;
+    text-transform: capitalize;
+}
+
+
+/* TODO FORM */
+
+/* TODO LIST */
+
+.todo_list {
+    width: 50%;
+    background-color: #ffffff;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 30px 9px rgba(199, 194, 193, 1);
+}
+
+.todo_list h2 {
+    color: #00d061;
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+}
+
+.todo_list .list_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.todo_list .list_form label {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #2980b9;
+}
+
+.todo_list input {
+    width: 100%;
+    height: 1.8rem;
+    margin: .5rem 0;
+    padding: .4rem .4rem;
+    background: #d3d9e3;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+}
+
+.todo_list input::placeholder {
+    color: #00d061;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* List Group Items */
+.list_group .list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: .5rem 0;
+    padding: .4rem .4rem;
+    background: #d3d9e3;
+    color: #00d061;
+    font-size: 12px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.list-group-item .todo-content {
+    padding: 0;
+    display: flex;
+    flex-grow: 1;
+}
+
+.list-group-item .checkbox {
+    width: .8rem;
+    height: .8rem;
+    margin: 0 .5rem;
+}
+
+.list-group-item span {
+    display: flex;
+    align-items: center;
+}
+
+.actions_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+}
+
+.actions_btns button {
+    width: 40%;
+    margin: 0 .25rem;
+    padding: .25rem .25rem;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    cursor: pointer;
+
+}
+
+.actions_btns .editbtn {
+    color: #2980b9;
+    transition: all 0.3s;
+}
+
+.actions_btns .editbtn:hover {
+    text-decoration: underline;
+    color: #fff;
+
+}
+
+.actions_btns .deletebtn {
+    color: #2980b9;
+    transition: all 0.3s;
+}
+
+.actions_btns .deletebtn:hover {
+    text-decoration: underline;
+    color: #f35369;
+
+}
+
+/* DeleteAll Button */
+.deleteall {
+    display: flex;
+    justify-content: end;
+}
+
+.deleteall button {
+    width: 30%;
+    margin: 0 .25rem;
+    padding: .25rem .25rem;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    cursor: pointer;
+
+}
+
+.deleteall .deleteallbtn {
+    color: #2980b9;
+    transition: all 0.3s;
+}
+
+.deleteall .deleteallbtn:hover {
+    text-decoration: underline;
+    color: #f35369;
+
+}
+
+/* DeleteAll Button */
+/* List Group Items */
+
+/* TODO LIST */
