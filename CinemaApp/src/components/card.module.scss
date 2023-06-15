@@ -1,0 +1,16 @@
+.card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .card_wrapper{
+        width: 30%;
+        background: #fff;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        color: black;
+    }
+    .card_wrapper img {
+        width: 100%;
+    }
+}
