@@ -1,16 +1,27 @@
-.card {
-    width: 100%;
+.card_wrapper {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    .card_wrapper{
-        width: 30%;
+
+    .card {
+        width: 300px;
+        height: auto;
         background: #fff;
-        margin-bottom: 1rem;
-        margin-right: 1rem;
         color: black;
+        overflow: hidden;
+        margin: 1rem 1rem 1rem 0;
     }
-    .card_wrapper img {
+
+    .card_image {
         width: 100%;
+        height: 400px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .card_image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
