@@ -102,7 +102,8 @@
         margin: 0;
         position: relative;
         font-size: 14px;
-        color: var(--primary-color)
+        color: var(--primary-color);
+        text-decoration: none;
     }
 
     .film_details::after {

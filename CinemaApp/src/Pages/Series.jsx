@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from "axios"
 import Card from '../components/Card'
 import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 const Series = () => {
     useEffect(() => {
@@ -31,6 +32,7 @@ const Series = () => {
             {isLoading ? "Loading" :
                 <Card filteredList={filteredList} />
             }
+            <Footer/>
         </>
     )
 }
