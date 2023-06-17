@@ -9,9 +9,10 @@ const Series = () => {
     }, [])
     const [films, setFilms] = useState([])
     const [filtered, setfiltered] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
 
     const fetchFilms = async () => {
-        const response = await axios.get("https://api.tvmaze.com/shows");
+        const response = await axios.get("https://api.tvmaze.com/shows").finally(setIsLoading(false));
         setFilms(response.data)
     }
     const handleChange = (e) => {
@@ -27,7 +28,9 @@ const Series = () => {
     return (
         <>
             <Header handleChange={handleChange} />
-            <Card filteredList={filteredList} />
+            {isLoading ? "Loading" :
+                <Card filteredList={filteredList} />
+            }
         </>
     )
 }

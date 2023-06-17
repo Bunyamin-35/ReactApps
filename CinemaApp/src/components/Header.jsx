@@ -1,5 +1,6 @@
 import React from 'react'
 import styles from "./header.module.scss"
+import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 const Header = ({handleChange}) => {
     return (
@@ -7,8 +8,8 @@ const Header = ({handleChange}) => {
             <div className={styles.header_logo}>
             </div>
             <div className={styles.header_actions}>
-                <a className={styles.home_page} to="/">Home</a>
-                <a className={styles.list_page} to="/">Series</a>
+                <Link className={styles.home_page} to="/">Home</Link>
+                <Link className={styles.list_page} to="/shows">Shows</Link>
             </div>
             <div className={styles.form}>
                 <input onChange={handleChange} placeholder='Search Series' />

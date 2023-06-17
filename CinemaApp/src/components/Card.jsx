@@ -26,7 +26,7 @@ const Card = ({ filteredList }) => {
                             <div className={styles.film_info}>
                                 <h2 className={styles.film_name}><CaretRightOutlined />{item.name}</h2>
                                 <button className={styles.film_details}>
-                                    <a className={styles.detail_btn} to={`/${item.name}`}>Details</a>
+                                    <Link className={styles.detail_btn} to={`/shows/${item.name}`}>Details</Link>
                                     <svg strokeWidth="4" stroke="currentColor" viewBox="0 0 24 24" fill="none" className={`${styles.h_6} ${styles.w_6}`} xmlns="http://www.w3.org/2000/svg">
                                         <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinejoin="round" strokeLinecap="round"></path>
                                     </svg>
