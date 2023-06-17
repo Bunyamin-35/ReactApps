@@ -8,10 +8,10 @@ import {
     CaretRightOutlined,
 } from '@ant-design/icons';
 
-const Card = ({ films }) => {
+const Card = ({ filteredList }) => {
     return (
         <div className={styles.card_wrapper}>
-            {films.map((item, index) => {
+            {filteredList.map((item, index) => {
                 return (
                     <div className={styles.card} key={index}>
                         <div className={styles.card_image}>
