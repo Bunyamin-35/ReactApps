@@ -2,14 +2,14 @@ import React from 'react'
 import styles from "./header.module.scss"
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
-const Header = ({handleChange}) => {
+const Header = ({ handleChange }) => {
     return (
         <div className={styles.header}>
             <div className={styles.header_logo}>
             </div>
             <div className={styles.header_actions}>
-                <Link className={styles.home_page} to="/">Home</Link>
-                <Link className={styles.list_page} to="/shows">Shows</Link>
+                <Link exact className={styles.home_page} activeClassName={styles.active} to="/">Home</Link>
+                <Link  className={styles.list_page} activeClassName={styles.active} to="/shows">Shows</Link>
             </div>
             <div className={styles.form}>
                 <input onChange={handleChange} placeholder='Search Series' />

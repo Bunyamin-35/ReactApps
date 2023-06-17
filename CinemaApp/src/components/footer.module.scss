@@ -56,6 +56,10 @@
         color: #fff;
         text-decoration: none;
         transition: all 0.5s;
+
+        .active{
+            color: red;
+        }
     }
 
     .navbar:hover {
