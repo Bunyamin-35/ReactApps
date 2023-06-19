@@ -6,6 +6,7 @@ import NotFound from './Pages/NotFound'
 import styles from "./app.module.scss"
 
 function App() {
+  
   return (
     <div className={styles.App}>
       <Routes>
@@ -13,7 +14,6 @@ function App() {
         <Route path="/shows" element={<Series />} />
         <Route path="/shows/:id" element={<Details />} />
         <Route path="*" element={<NotFound />} />
-
       </Routes>
     </div>
   )

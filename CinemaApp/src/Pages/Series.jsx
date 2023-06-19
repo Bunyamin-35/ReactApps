@@ -5,16 +5,22 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 
 const Series = () => {
+    
     useEffect(() => {
         fetchFilms();
-    }, [])
-    const [films, setFilms] = useState([])
-    const [filtered, setfiltered] = useState('')
-    const [isLoading, setIsLoading] = useState(true)
+    }, []);
+
+    const [films, setFilms] = useState([]);
+    const [filtered, setfiltered] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
+    const [theme, setTheme] = useState("dark");
+    useEffect(() => {
+        document.body.className = theme;
+    }, [theme]);
 
     const fetchFilms = async () => {
         const response = await axios.get("https://api.tvmaze.com/shows").finally(setIsLoading(false));
-        setFilms(response.data)
+        setFilms(response.data);
     }
     const handleChange = (e) => {
         setfiltered(e.target.value.toLowerCase());
@@ -27,13 +33,13 @@ const Series = () => {
         })
     });
     return (
-        <>
-            <Header handleChange={handleChange} />
+        <div>
+            <Header handleChange={handleChange} theme={theme} setTheme={setTheme} />
             {isLoading ? "Loading" :
                 <Card filteredList={filteredList} />
             }
-            <Footer/>
-        </>
+            <Footer />
+        </div>
     )
 }
 
