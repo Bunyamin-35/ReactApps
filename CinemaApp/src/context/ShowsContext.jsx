@@ -36,6 +36,7 @@ export const ShowsProvider = ({ children }) => {
         document.body.className = theme;
     }, [theme]);
 
+    const highrated = filteredList.filter((film)=> film.rating.average>"8.5")
 
 
     const values = {
@@ -46,6 +47,7 @@ export const ShowsProvider = ({ children }) => {
         setTheme,
         handleChange,
         filteredList,
+        highrated,
     }
 
     return (

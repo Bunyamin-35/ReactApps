@@ -1,18 +1,18 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Details from '../components/Details'
 
 
-const Details = () => {
-    const {id} = useParams();   
+const Detail = () => {
+    
   return (
     <div>
         <Header/>
-        <h1>Details {id}</h1>
+        <Details/>
         <Footer />
     </div>
   )
 }
 
-export default Details;
+export default Detail;
