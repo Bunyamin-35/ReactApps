@@ -15,8 +15,8 @@ export const ShowsProvider = ({ children }) => {
             setIsLoading(false);
             fetchFilms();
         },3000)
-        
     }, []);
+  
 
     const fetchFilms = async () => {
         const response = await axios.get("https://api.tvmaze.com/shows").finally(setIsLoading(false));
