@@ -7,10 +7,15 @@ const ShowsContext = createContext();
 export const ShowsProvider = ({ children }) => {
 
     const [films, setFilms] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        fetchFilms();
+        setIsLoading(true);
+        setTimeout(()=>{
+            setIsLoading(false);
+            fetchFilms();
+        },3000)
+        
     }, []);
 
     const fetchFilms = async () => {
@@ -37,6 +42,7 @@ export const ShowsProvider = ({ children }) => {
     }, [theme]);
 
     const highrated = filteredList.filter((film)=> film.rating.average>"8.5")
+    const actionsShows = filteredList.filter((film)=> film.genres.includes("Action"))
 
 
     const values = {
@@ -48,6 +54,7 @@ export const ShowsProvider = ({ children }) => {
         handleChange,
         filteredList,
         highrated,
+        actionsShows,
     }
 
     return (

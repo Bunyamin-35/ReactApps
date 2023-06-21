@@ -5,9 +5,10 @@ import SwitchTheme from './SwitchTheme';
 import ShowsContext from "../context/ShowsContext";
 import { useContext } from "react";
 
+
 const Header = () => {
 
-    const { theme, setTheme,handleChange } = useContext(ShowsContext);
+    const { theme, setTheme, handleChange} = useContext(ShowsContext);
 
     return (
         <div className={styles.header}>

@@ -18,22 +18,17 @@ const Details = () => {
 
     return (
         currentShow && (
-            <div className={styles.card}>
-                <div className={styles.card_image}>
+            <div className={styles.detailcard}>
+                <div className={styles.detailcard_image}>
                     <img src={currentShow.image.original}></img>
                 </div>
-                <div className={styles.card_content}>
-                    <div className={styles.rating}>
-                        <span className={styles.rating_icon}><StarOutlined /></span>
-                        <span className={styles.average_rating}>{currentShow.rating.average}</span>
-                        <button className={styles.rate}><span><LikeOutlined /></span></button>
-                    </div>
+                <div className={styles.detailcard_content}>
                     <div className={styles.film_info}>
-                        <h2 className={styles.film_name}><CaretRightOutlined />{currentShow.name}</h2>
+                        <h2 className={styles.film_name}>
+                            <CaretRightOutlined />
+                            <span>{currentShow.name}</span>
+                        </h2>
                         <p>{currentShow.summary}</p>
-                        <button className={styles.film_details}>
-                            
-                        </button>
                     </div>
                 </div>
             </div>

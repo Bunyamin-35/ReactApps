@@ -10,7 +10,7 @@ import {
 
 
 const Hero = () => {
-    const { highrated } = useContext(ShowsContext);
+    const { highrated, actionsShows } = useContext(ShowsContext);
     const [showsPerPage] = useState(4);
 
     const [startIdx, setStartIndex] = useState(0)
@@ -34,6 +34,8 @@ const Hero = () => {
     };
 
     const visibleShows = highrated.slice(startIdx, endIdx);
+    const visibleActionShows = actionsShows.slice(startIdx, endIdx);
+
 
     return (
         <>
@@ -50,7 +52,23 @@ const Hero = () => {
                 </button>
                 <div className={styles.slider}>
                     {visibleShows.map((show) => (
-                        <Link className={styles.slider_image} key={show.id} to="/shows">
+                        <Link className={styles.slider_image} key={show.id} to={`/shows/${show.name}`}>
+                            <img src={show.image.original} alt={show.name} />
+                        </Link>
+                    ))}
+                </div>
+                <button className={styles.next_btn} onClick={handleNextIndex}>
+                    <CaretRightOutlined />
+                </button>
+            </div>
+            <div className={styles.title}><h2><span>Action</span> Shows</h2></div>
+            <div className={styles.container}>
+                <button className={styles.prev_btn} onClick={handlePrevIndex}>
+                    <CaretLeftOutlined />
+                </button>
+                <div className={styles.slider}>
+                    {visibleActionShows.map((show) => (
+                        <Link className={styles.slider_image} key={show.id} to={`/shows/${show.name}`}>
                             <img src={show.image.original} alt={show.name} />
                         </Link>
                     ))}
