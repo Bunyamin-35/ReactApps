@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation} from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react';
 import Series from './Pages/Series'
 import Home from './Pages/Home'

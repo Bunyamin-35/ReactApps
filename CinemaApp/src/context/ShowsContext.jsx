@@ -1,5 +1,7 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useLocation } from 'react-router-dom'
+
 
 
 const ShowsContext = createContext();
@@ -8,6 +10,14 @@ export const ShowsProvider = ({ children }) => {
 
     const [films, setFilms] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    const { pathname } = useLocation();
+    useEffect(() => {
+        setIsLoading(true)
+        setTimeout(()=>{
+            setIsLoading(false);
+        },1500)
+    }, [pathname])
 
     useEffect(() => {
         setIsLoading(true);
@@ -49,6 +59,7 @@ export const ShowsProvider = ({ children }) => {
         films,
         setFilms,
         isLoading,
+        setIsLoading,
         theme,
         setTheme,
         handleChange,

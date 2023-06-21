@@ -10,15 +10,15 @@ const Series = () => {
     const { isLoading } = useContext(ShowsContext);
     return (
         (isLoading ?
-            <Dna
-                className={styles.loader}
-                visible={true}
-                height="80"
-                width="80"
-                ariaLabel="dna-loading"
-                wrapperStyle={{}}
-                wrapperClass="dna-wrapper"
-            /> :
+            <div className={styles.loader}>
+                <Dna
+                    visible={true}
+                    height="80"
+                    width="80"
+                    ariaLabel="dna-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="dna-wrapper"
+                /> </div> :
             <div className={styles.home}>
                 <Header />
                 <Card />
