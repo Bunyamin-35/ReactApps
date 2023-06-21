@@ -46,9 +46,10 @@ export const ShowsProvider = ({ children }) => {
         })
     });
 
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
     useEffect(() => {
         document.body.className = theme;
+        localStorage.setItem("theme",theme);
     }, [theme]);
 
     const highrated = filteredList.filter((film)=> film.rating.average>"8.5")
