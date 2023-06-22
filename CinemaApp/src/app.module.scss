@@ -1,12 +1,26 @@
 .App {
   min-height: 100vh;
 }
-.loader{
+
+.loader {
+  background-image: url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80);
+  background-size: cover;
+  background-position: center;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  opacity: 0.5;
 }
-.home{
+
+.home {
   min-height: 100vh;
+}
+
+.loginform {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
 }

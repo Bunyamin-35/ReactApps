@@ -1,13 +1,16 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React from 'react'
+import {useShows} from '../context/ShowsContext'
+
 import Card from '../components/Card'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import ShowsContext from '../context/ShowsContext'
+
 import styles from "../app.module.scss"
+
 import { Dna } from 'react-loader-spinner'
 
 const Series = () => {
-    const { isLoading } = useContext(ShowsContext);
+    const { isLoading } = useShows();
     return (
         (isLoading ?
             <div className={styles.loader}>

@@ -1,15 +1,16 @@
 import React from 'react'
-import { useContext} from 'react'
+import {useShows} from "../context/ShowsContext"
+
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Details from '../components/Details'
-import { Dna } from 'react-loader-spinner'
-import ShowsContext from '../context/ShowsContext';
 import styles from "../app.module.scss"
+
+import { Dna } from 'react-loader-spinner'
 
 
 const Detail = () => {
-  const { isLoading } = useContext(ShowsContext);
+  const { isLoading } = useShows();
 
   return (
     (isLoading ? <div className={styles.loader}>

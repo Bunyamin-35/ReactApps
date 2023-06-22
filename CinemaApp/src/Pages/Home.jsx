@@ -1,4 +1,5 @@
-import React, { useContext} from 'react'
+import React from 'react';
+import {useShows} from "../context/ShowsContext"
 
 import Header from '../components/Header';
 import Hero from '../components/Hero';
@@ -6,10 +7,9 @@ import Footer from '../components/Footer';
 import styles from "../app.module.scss"
 
 import { Dna } from 'react-loader-spinner'
-import ShowsContext from '../context/ShowsContext';
 
 const Home = () => {
-    const { isLoading} = useContext(ShowsContext);
+    const { isLoading} = useShows();
 
     return (
         

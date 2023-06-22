@@ -1,14 +1,15 @@
-import styles from "./header.module.scss"
+import React from "react";
 import { Link } from 'react-router-dom';
-import { SearchOutlined } from '@ant-design/icons';
-import SwitchTheme from './SwitchTheme';
-import ShowsContext from "../context/ShowsContext";
-import { useContext } from "react";
+import { useShows } from "../context/ShowsContext";
 
+import SwitchTheme from './SwitchTheme';
+
+import styles from "./header.module.scss"
+
+import { SearchOutlined } from '@ant-design/icons';
 
 const Header = () => {
-
-    const { theme, setTheme, handleChange} = useContext(ShowsContext);
+    const { theme, setTheme, handleChange} = useShows();
 
     return (
         <div className={styles.header}>
@@ -17,6 +18,7 @@ const Header = () => {
             <div className={styles.header_actions}>
                 <Link className={styles.home_page} to="/">Home</Link>
                 <Link className={styles.list_page} to="/shows">Shows</Link>
+                <Link className={styles.list_page} to="/login">Login</Link>
             </div>
             <div className={styles.form}>
                 <input onChange={handleChange} placeholder='Search Series' />

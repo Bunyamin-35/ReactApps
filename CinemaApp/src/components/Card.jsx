@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
-import styles from "./card.module.scss"
+import React from "react";
 import { Link } from 'react-router-dom';
-import ShowsContext from '../context/ShowsContext';
+import {useShows} from '../context/ShowsContext';
+
+import styles from "./card.module.scss"
 
 import {
     StarOutlined,
@@ -10,7 +11,7 @@ import {
 } from '@ant-design/icons';
 
 const Card = () => {
-    const { theme, filteredList } = useContext(ShowsContext);
+    const { theme, filteredList } = useShows();
 
     return (
         <div className={styles.card_wrapper}>

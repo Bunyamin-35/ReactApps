@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
-import ShowsContext from '../context/ShowsContext'
-import styles from "./hero.module.scss"
+import React, {useState } from 'react'
 import { Link } from 'react-router-dom';
+import {useShows} from '../context/ShowsContext'
+
+import styles from "./hero.module.scss"
 
 import {
     CaretRightOutlined,
@@ -10,7 +11,7 @@ import {
 
 
 const Hero = () => {
-    const { highrated, actionsShows } = useContext(ShowsContext);
+    const { highrated, actionsShows } = useShows();
     const [showsPerPage] = useState(4);
 
     const [startIdx, setStartIndex] = useState(0)

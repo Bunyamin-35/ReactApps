@@ -1,9 +1,9 @@
-
-import { useParams } from 'react-router-dom'
-import ShowsContext from '../context/ShowsContext';
-import React, { useContext, useState } from 'react'
-import styles from "./details.module.scss"
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom'
+import {useShows} from '../context/ShowsContext';
+
+import styles from "./details.module.scss"
 
 import {
     StarOutlined,
@@ -13,7 +13,7 @@ import {
 
 const Details = () => {
     const { id } = useParams();
-    const { theme, filteredList } = useContext(ShowsContext);
+    const { theme, filteredList } = useShows();
     const currentShow = filteredList.find((show) => show.name === id);
 
     return (

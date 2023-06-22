@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState,useContext } from "react";
 import { useLocation } from 'react-router-dom'
 
 
@@ -75,4 +75,5 @@ export const ShowsProvider = ({ children }) => {
         </ShowsContext.Provider>
     )
 }
-export default ShowsContext;
+export const useShows = () => useContext(ShowsContext);
+// export default ShowsContext;
