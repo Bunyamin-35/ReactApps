@@ -11,11 +11,11 @@ import {
 } from '@ant-design/icons';
 
 const Card = () => {
-    const { theme, filteredList } = useShows();
+    const { theme, filteredList,filteredFilms } = useShows();
 
     return (
         <div className={styles.card_wrapper}>
-            {filteredList.map((item, index) => {
+            {filteredFilms.map((item, index) => {
                 return (
                     <div className={theme === "light" ? styles.card_light : styles.card} key={index}>
                         <div className={styles.card_image}>

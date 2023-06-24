@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useEffect, useState,useContext } from "react";
+import { createContext, useEffect, useState, useContext } from "react";
 import { useLocation } from 'react-router-dom'
 
 
@@ -9,28 +9,45 @@ const ShowsContext = createContext();
 export const ShowsProvider = ({ children }) => {
 
     const [films, setFilms] = useState([]);
+    const [filteredFilms, setFilteredFilms] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const { pathname } = useLocation();
     useEffect(() => {
         setIsLoading(true)
-        setTimeout(()=>{
+        setTimeout(() => {
             setIsLoading(false);
-        },1500)
+        }, 1500)
     }, [pathname])
 
     useEffect(() => {
         setIsLoading(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setIsLoading(false);
             fetchFilms();
-        },3000)
+        }, 3000)
     }, []);
-  
+
 
     const fetchFilms = async () => {
         const response = await axios.get("https://api.tvmaze.com/shows").finally(setIsLoading(false));
         setFilms(response.data);
+    }
+    const categories = ["All", "Drama", "Science-Fiction", "Thriller", "Action", "Crime", "Horror", "Romance", "Crime", "Adventure", "Espionage", "Music", "Mystery", "Supernatural"]
+
+    const handleCategory = (e) => {
+        const filtered = []
+        if (e !== "All") {
+            films.map(film => {
+                if(film.genres.includes(e)){
+                    console.log(film);
+                    filtered.push(film);
+                }
+            });
+            setFilteredFilms(filtered);
+        } else if(e=== "All") {
+            setFilteredFilms(films);
+        }
     }
 
     const [filtered, setfiltered] = useState('');
@@ -49,11 +66,11 @@ export const ShowsProvider = ({ children }) => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
     useEffect(() => {
         document.body.className = theme;
-        localStorage.setItem("theme",theme);
+        localStorage.setItem("theme", theme);
     }, [theme]);
 
-    const highrated = filteredList.filter((film)=> film.rating.average>"8.5")
-    const actionsShows = filteredList.filter((film)=> film.genres.includes("Action"))
+    const highrated = filteredList.filter((film) => film.rating.average > "8.5")
+    const actionsShows = filteredList.filter((film) => film.genres.includes("Action"))
 
 
     const values = {
@@ -67,6 +84,9 @@ export const ShowsProvider = ({ children }) => {
         filteredList,
         highrated,
         actionsShows,
+        handleCategory,
+        categories,
+        filteredFilms,
     }
 
     return (

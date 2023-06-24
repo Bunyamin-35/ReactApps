@@ -4,6 +4,7 @@ import {useShows} from '../context/ShowsContext'
 import Card from '../components/Card'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import Categories from '../components/Categories'
 
 import styles from "../app.module.scss"
 
@@ -24,6 +25,7 @@ const Series = () => {
                 /> </div> :
             <div className={styles.home}>
                 <Header />
+                <Categories/>
                 <Card />
                 <Footer />
             </div>)
