@@ -1,9 +1,9 @@
 
-import { useShows } from '../context/ShowsContext'
+import { useCategories } from '../context/CategoriesContext';
 
 import styles from "./categories.module.scss"
 const Categories = () => {
-    const {handleCategory,categories} = useShows();
+    const {handleCategory,categories} = useCategories();
     
     
     return (

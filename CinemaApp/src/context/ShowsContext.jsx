@@ -9,7 +9,6 @@ const ShowsContext = createContext();
 export const ShowsProvider = ({ children }) => {
 
     const [films, setFilms] = useState([]);
-    const [filteredFilms, setFilteredFilms] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     const { pathname } = useLocation();
@@ -33,21 +32,7 @@ export const ShowsProvider = ({ children }) => {
         const response = await axios.get("https://api.tvmaze.com/shows").finally(setIsLoading(false));
         setFilms(response.data);
     }
-    const categories = ["All", "Drama", "Science-Fiction", "Thriller", "Action", "Crime", "Horror", "Romance", "Crime", "Adventure", "Espionage", "Music", "Mystery", "Supernatural"]
-
-    const handleCategory = (e) => {
-        const filtered = []
-        if (e !== "All") {
-            films.map(film => {
-                if(film.genres.includes(e)){
-                    filtered.push(film);
-                }
-            });
-            setFilteredFilms(filtered);
-        } else if(e=== "All") {
-            setFilteredFilms(films);
-        }
-    }
+   
 
     const [filtered, setfiltered] = useState('');
 
@@ -77,9 +62,6 @@ export const ShowsProvider = ({ children }) => {
         filteredList,
         highrated,
         actionsShows,
-        handleCategory,
-        categories,
-        filteredFilms,
     }
 
     return (

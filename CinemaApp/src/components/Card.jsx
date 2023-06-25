@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import { useShows } from '../context/ShowsContext';
 import { useTheme } from "../context/ThemeContext";
+import { useCategories } from "../context/CategoriesContext";
 
 import styles from "./card.module.scss"
 
@@ -12,7 +12,7 @@ import {
 } from '@ant-design/icons';
 
 const Card = () => {
-    const { filteredFilms } = useShows();
+    const { filteredFilms } = useCategories();
     const { theme } = useTheme();
 
     return (
