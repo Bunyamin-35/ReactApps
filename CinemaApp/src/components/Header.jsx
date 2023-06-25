@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import { useShows } from "../context/ShowsContext";
+import { useTheme } from "../context/ThemeContext";
 
 import SwitchTheme from './SwitchTheme';
 
@@ -9,7 +10,8 @@ import styles from "./header.module.scss"
 import { SearchOutlined } from '@ant-design/icons';
 
 const Header = () => {
-    const { theme, setTheme, handleChange} = useShows();
+    const { handleChange } = useShows();
+    const {theme,setTheme} = useTheme();
 
     return (
         <div className={styles.header}>

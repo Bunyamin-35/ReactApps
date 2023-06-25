@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import {useShows} from '../context/ShowsContext';
+import { useShows } from '../context/ShowsContext';
+import { useTheme } from "../context/ThemeContext";
 
 import styles from "./card.module.scss"
 
@@ -11,7 +12,8 @@ import {
 } from '@ant-design/icons';
 
 const Card = () => {
-    const { theme, filteredList,filteredFilms } = useShows();
+    const { filteredFilms } = useShows();
+    const { theme } = useTheme();
 
     return (
         <div className={styles.card_wrapper}>

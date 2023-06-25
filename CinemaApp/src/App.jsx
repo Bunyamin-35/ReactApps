@@ -7,6 +7,7 @@ import Login from './Pages/Login';
 import NotFound from './Pages/NotFound'
 import styles from "./app.module.scss"
 import { ShowsProvider } from './context/ShowsContext'
+import { ThemeProvider } from './context/ThemeContext'
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,16 +23,18 @@ function App() {
 
   return (
     <div className={styles.App}>
-      <ShowsProvider>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shows" element={<Series />} />
-          <Route path="/shows/:id" element={<Detail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </ShowsProvider>
+      <ThemeProvider >
+        <ShowsProvider>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/shows" element={<Series />} />
+            <Route path="/shows/:id" element={<Detail />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </ShowsProvider>
+      </ThemeProvider >
     </div>
   )
 }

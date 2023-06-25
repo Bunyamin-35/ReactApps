@@ -13,7 +13,7 @@ import {
 
 const Details = () => {
     const { id } = useParams();
-    const { theme, filteredList } = useShows();
+    const { filteredList } = useShows();
     const currentShow = filteredList.find((show) => show.name === id);
 
     return (

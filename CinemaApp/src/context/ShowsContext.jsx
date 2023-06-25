@@ -40,7 +40,6 @@ export const ShowsProvider = ({ children }) => {
         if (e !== "All") {
             films.map(film => {
                 if(film.genres.includes(e)){
-                    console.log(film);
                     filtered.push(film);
                 }
             });
@@ -63,11 +62,7 @@ export const ShowsProvider = ({ children }) => {
         })
     });
 
-    const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
-    useEffect(() => {
-        document.body.className = theme;
-        localStorage.setItem("theme", theme);
-    }, [theme]);
+    
 
     const highrated = filteredList.filter((film) => film.rating.average > "8.5")
     const actionsShows = filteredList.filter((film) => film.genres.includes("Action"))
@@ -78,8 +73,6 @@ export const ShowsProvider = ({ children }) => {
         setFilms,
         isLoading,
         setIsLoading,
-        theme,
-        setTheme,
         handleChange,
         filteredList,
         highrated,
