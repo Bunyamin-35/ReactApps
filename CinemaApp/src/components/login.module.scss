@@ -1,0 +1,197 @@
+.loginform {
+    height: 80vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+
+    .form {
+        width: 30%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #282c34;
+        padding: 1rem;
+        border-radius: 10px;
+
+        button {
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        h3 {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-top: 1rem;
+
+        }
+
+        .loginwith {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin: .5rem 0 2rem;
+
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 2.4rem;
+                width: 32%;
+                height: 60px;
+                background-color: #fff;
+                border-radius: 5px;
+
+                .google {
+                    color: #282c34;
+                    transition: all 0.3s;
+                }
+
+                .github {
+                    color: #282c34;
+                    transition: all 0.3s;
+                }
+
+                .linkedin {
+                    color: #282c34;
+                    transition: all 0.3s;
+                }
+
+                transition: all 0.3s;
+
+                .google:hover {
+                    color: red;
+                    font-size: 2.8rem;
+                    cursor: pointer;
+                }
+
+                .github:hover {
+                    color: #010409;
+                    font-size: 2.8rem;
+                    cursor: pointer;
+                }
+
+                .linkedin:hover {
+                    color: #0a66c2;
+                    font-size: 2.8rem;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .email,
+        .password {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: #fff;
+                font-size: 1rem;
+                margin: .5rem 0;
+            }
+
+
+
+            input {
+                width: 100%;
+                height: 25px;
+                background: #fff;
+                border: none;
+                outline: none;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        }
+
+        .alerts {
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            margin: .5rem 0;
+            padding: 5px;
+            color: #fff;
+
+            input {
+                cursor: pointer;
+            }
+
+            label {
+                margin-left: .25rem;
+            }
+
+            button {
+                border: none;
+                outline: none;
+                background: transparent;
+                cursor: pointer;
+                margin-left: auto;
+                color: #fff;
+            }
+        }
+
+        .loginbtn {
+            width: 100%;
+            text-align: center;
+            margin: 1rem 0 .25rem;
+
+            button {
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: .5rem 1rem;
+                border-radius: 5px;
+                font-weight: 800;
+            }
+        }
+
+        .registerbtn {
+            width: 100%;
+            text-align: center;
+            margin: 0 0 .5rem;
+
+            label {
+                color: #fff;
+                display: flex;
+                justify-content: flex-start;
+                margin: .25rem;
+                font-size: 12px;
+                
+            }
+
+            button {
+                width: 100%;
+                border: none;
+                outline: none;
+                padding: .5rem 1rem;
+                border-radius: 5px;
+                font-weight: 800;
+                
+            }
+        }
+
+        .footer {
+            text-align: center;
+            width: 100%;
+            margin: auto 0 0;
+            border-top: .5px solid #fff;
+            color: #fff;
+            font-size: 10px;
+            padding: .25rem;
+        }
+
+    }
+
+
+}
