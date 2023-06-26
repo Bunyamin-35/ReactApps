@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&family=Roboto+Mono:wght@300&display=swap');
+
+
 .header {
     height: 1.2rem;
     display: flex;
@@ -5,13 +8,17 @@
     align-items: center;
     padding: 2rem;
     background-color: #282c34;
+    // font-family: 'Belanosima', sans-serif;
+    font-family: 'Roboto Mono', monospace;
 
-    div:nth-of-type(1) {
-        flex-grow: 1;
+
+    .active {
+        border-bottom: 1px solid #f5c518;
+        color: #f5c518 !important;
     }
 
     .header_logo {
-        min-width: 80px;
+        min-width: 120px;
         max-width: 120px;
         height: 40px;
         background: url("https://static.vecteezy.com/system/resources/thumbnails/005/188/413/small/cinema-logo-template-isolated-on-white-background-vector.jpg");
@@ -20,9 +27,7 @@
         border-radius: 1rem;
     }
 
-    div:nth-of-type(2) {
-        flex-grow: 1;
-    }
+
 
     .header_actions {
         display: flex;
@@ -37,10 +42,6 @@
             background: transparent;
             color: #fff;
         }
-    }
-
-    div:nth-of-type(3) {
-        flex-grow: 3;
     }
 
     .form {
@@ -127,4 +128,3 @@
 
 
 }
-

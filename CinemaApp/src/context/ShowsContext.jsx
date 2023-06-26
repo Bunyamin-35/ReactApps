@@ -10,6 +10,7 @@ export const ShowsProvider = ({ children }) => {
 
     const [films, setFilms] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const [isActive,setIsActive] = useState(true)
 
     const { pathname } = useLocation();
     useEffect(() => {
@@ -62,6 +63,7 @@ export const ShowsProvider = ({ children }) => {
         filteredList,
         highrated,
         actionsShows,
+        pathname,
     }
 
     return (
